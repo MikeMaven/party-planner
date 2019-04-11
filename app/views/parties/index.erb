@@ -1,0 +1,12 @@
+<h1 class="page-header">Parties</h1>
+<a href="/new"class="button">ADD A PARTY</a>
+<br /><br />
+<ul>
+  <% if @parties %>
+    <% @parties.each do |party| %>
+      <li>
+        <a href="parties/<%= party[:id] %>"><%= party.name %></a>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

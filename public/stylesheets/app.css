@@ -1,0 +1,72 @@
+body {
+  background-color: #5BC0EB;
+  color: #2A2D34;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+a,
+a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.top-bar {
+  background-color: #2A2D34;
+}
+
+.top-bar-section {
+  display: inline-block;
+  float: right;
+}
+
+.logo {
+  display: inline-block;
+  margin: 1em 0;
+}
+
+.flash {
+  padding: 1em;
+  background-color: #FFD800;
+}
+
+.page-header {
+  font-size: 5em;
+  font-family: 'Dokdo', cursive;
+}
+
+.sub-header {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+.in-row {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items:center;
+}
+
+.names-in-row {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items:center;
+}
+
+.nav-button {
+  margin-left: 20px;
+}
+
+.errors {
+  color: red;
+}
+
+.invisible {
+  visibility: hidden;
+}

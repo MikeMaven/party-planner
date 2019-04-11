@@ -1,0 +1,39 @@
+<h2 class="sub-header"><%= @party.name %></h2><a href="./<%= @party.id %>/edit" class="button">EDIT</a><a href="./<%= @party.id %>/delete" class="alert button">DELETE</a>
+<h4 class="sub-header">Location:</h4>
+<p><%= @party.location %></p>
+<h4 class="sub-header">Deets:</h4>
+<p><%= @party.description %></p>
+<br/><br/>
+<h4 class="sub-header">Invite Friends:</h4>
+
+<form action="/invite" method="post">
+  <select name="party" class="invisible">
+    <option value="<%= @party.id %>"><%= @party.name %></option>
+  </select>
+  <select name="friend">
+    <% @friends.each do |friend| %>
+    <option value="<%= friend.id %>"><%= friend.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="INVITE" />
+</form>
+
+<h4 class="sub-header">Invited Friends:</h4>
+<ul>
+  <% @party.friends.each do |friend| %>
+    <li><%= friend.name %></li>
+    <a href="./guestlist/<%= friend.party_invites.find_by(party_id: @party.id).id %>/uninvite" class="tiny alert button">X</a><a href="./guestlist/<%= friend.party_invites.find_by(party_id: @party.id).id %>/rsvp" class="tiny success button">✓</a>
+  <% end %>
+</ul>
+
+<h4 class="sub-header">Attending Friends:</h4>
+<ul>
+  <% @party.friends.each do |friend| %>
+    <% invited = friend.party_invites.find_by(party_id: @party.id).id %>
+      <% if PartyInvite.find(invited).attending %>
+        <li><%= friend.name %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+<a href="/" class="success button">Go Back to Parties</a>

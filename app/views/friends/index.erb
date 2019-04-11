@@ -1,0 +1,11 @@
+<h1 class="page-header">Friends</h1>
+<h4 class="sub-header">Your Friends List</h4>
+<a href="/friend/new" class="button">ADD A FRIEND</a>
+<br /><br />
+<ul>
+<% if @friends %>
+  <% @friends.each do |friend| %>
+    <div><li><%= friend.name %></li><a href="./friends/<%= friend.id %>/delete" class="tiny alert button">DELETE</a></div>
+  <% end %>
+<% end %>
+</ul>

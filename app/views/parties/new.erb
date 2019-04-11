@@ -1,0 +1,19 @@
+<% if @errors %>
+<ul class="errors">
+  <% @errors.each do |error| %>
+    <li> <%= error %> </li>
+  <% end %>
+</ul>
+<% end %>
+<form action="/new" method="post">
+  <h3 class="sub-header">Submit A New Party:</h3>
+  <label for="name">Party Name:</label>
+  <input type="text" id="name" name="name" value="<%= @name %>" ><br />
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="description" value="<%= @description %>" ><br />
+  <label for="location">Location:</label>
+  <input type="text" id="location" name="location" value="<%= @location %>" ><br />
+  <input type="submit" value="Submit">
+</form>
+<br /><br />
+<a href="/" class="success button">Go Back to Parties</a>
